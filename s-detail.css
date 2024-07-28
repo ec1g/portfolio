@@ -115,6 +115,16 @@ video{
     margin: 10px;
     object-fit: cover;
 }
+.wilust-img{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.wilust-img img{
+    width: 350px;
+    margin: 10px;
+    object-fit: cover;
+}
 
 
 
