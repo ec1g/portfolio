@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+  <title>portfolio-works4</title>
+  <link rel="stylesheet" href="s-detail.css">
+  <style>
+    .fade-in-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+    <main>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#profile">Profile</a></li>
+                    <li><a href="i-all.html">Works</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="w1 fade-in-up">
+            <img class="detail" src="e1.JPG">
+            <div class="cyap fade-in-up">
+                <h1>イラスト</h1>
+                <p>趣味でイラストを描いています。<br>
+                特にデザインや配色に力を入れた作品をまとめました。<br>
+                </p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>製作時期:</td>
+                            <td><p>2021-2023/6</p></td>
+                        </tr>
+                        <tr>
+                            <td>製作時間:</td>
+                            <td><p>3-7時間/枚</p></td>
+                        </tr>
+                        <tr>
+                            <td>使用アプリ:</td>
+                            <td><p>ibisPaint</p></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="w-img fade-in-up">
+                <img src="e1.JPG" loading="lazy">
+                <img src="e2.JPG" loading="lazy">
+                <img src="e3.JPG" loading="lazy">
+                <img src="e4.PNG" loading="lazy">
+            </div>
+        </section>
+
+        <footer>
+            <div>
+                <a href="#"><img class="f1" src="mail.png" loading="lazy"></a>
+                <a href="#"><img class="f2" src="github.webp" loading="lazy"></a>
+            </div>
+            <p>@portfolio</p>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const video = document.querySelector(".detail12");
+
+            if (video) {
+                video.addEventListener("mouseenter", function() {
+                    video.play();
+                });
+
+                video.addEventListener("mouseleave", function() {
+                    video.pause();
+                    video.currentTime = 0;  // 動画を最初に戻す場合
+                });
+            }
+
+            const elements = document.querySelectorAll('.fade-in-up');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

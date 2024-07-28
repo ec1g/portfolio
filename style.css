@@ -4,6 +4,20 @@ body{
     background-color: rgb(192, 192, 192);
 }
 
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
 /*header*/
 header{
     position: fixed;
@@ -24,14 +38,6 @@ header{
     }
 }
 
-header h1{
-    color: rgb(255, 255, 255);
-    margin: 10px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-shadow: 1px 1px #44444484;
-}
 header nav{
     display: flex;
     justify-content: center;
@@ -55,12 +61,13 @@ header ul li a{
     padding: 8px;
 }
 header ul li a:hover{
-    background-color: #f3f3f383;
-    transition: background-color 0.3s;
+    color: #833737;
+    transition: color 0.4s;
 }
 
 /*hero*/
-.hero div{
+.g-box{
+    z-index: 100;
     position: absolute;
   top: 50%;
   left: 50%;
@@ -71,32 +78,116 @@ header ul li a:hover{
   background-image:  linear-gradient(#444444 1.4px, transparent 1.4px), linear-gradient(to right, #444444 1.4px, rgba(230, 230, 247, 0) 1.4px);
   background-size: 33.2px 33.2px;
 }
-
 @media(max-width: 600px){
-    .hero div{
+    .g-box{
     width: 100%;
     }
 }
 
-.target{
+.slider {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200%;
+    height: 100%;
+    background-color: rgb(192, 192, 192);
+    animation: slideIn 2.5s forwards;
     z-index: 999;
-    position: fixed;
-    bottom: 8%;
-    right: 6%;
 }
-.hero .triangle{
-    width: 0;
-height: 0;
-border-style: solid;
-border-color: transparent transparent #bf0000 transparent;
-border-width: 0px 32px 55.43px 32px;
+
+@keyframes slideIn {
+    0% {
+        right: -10%;
+    }
+    100% {
+        right: 100%;
+    }
 }
+
+
+@keyframes slideIn-m{
+    0% {
+        transform: translateY(70%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.text-h {
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.text-h h1{
+    font-family: Makinas-4;
+    font-size: 3rem;
+    animation: slideIn-m 2s ease-out;
+    color: white;
+}
+
+
+
+
+.img-wrap {
+    overflow: hidden;
+    position: relative;
+  }
+  .img-wrap img{
+    width: 100%;
+    height: 500px;
+    padding-top: 100px;
+    object-fit: cover;
+    object-position: 50% 25%;
+    z-index: 1;
+  }
+  
+  .cover1,
+  .cover2,
+  .cover3 {
+    animation: cover 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    background: rgb(192, 192, 192);
+    height: calc(100% / 3);
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+  }
+  
+  .cover1 {
+    top: 0;
+  }
+  
+  .cover2 {
+    animation-delay: 0.2s;
+    top: calc(100% / 3);
+  }
+  
+  .cover3 {
+    animation-delay: 0.4s;
+    top: calc(100% / 3 * 2);
+  }
+  
+  @keyframes cover {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  
+
+
+
 
 
 /*profile*/
 .M{
    position: relative;
-   top: 700px;
+   top: 200px;
    left: 50%;
    transform: translateX(-50%);
     width: 60%;
@@ -105,6 +196,23 @@ border-width: 0px 32px 55.43px 32px;
     height: 750px;
     background-color: rgba(255, 255, 255, 0.528);
 }
+.M{
+    animation-name:fadeInAnime;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+    opacity:0;
+    }
+    
+    @keyframes fadeInAnime{
+      from {
+        opacity: 0;
+      }
+    
+      to {
+        opacity: 1;
+      }
+    }
+
 .M .P{
     position: relative;
     top: -170px;
@@ -120,7 +228,12 @@ border-width: 0px 32px 55.43px 32px;
     margin-left: -10px;
     margin-bottom: 270px;
     border-bottom: #808080 solid;
+    font-family: Makinas-4;
 }
+@font-face {
+    font-family: Makinas-4;
+    src: url(makinas4/Makinas-4-Flat.otf);
+  }
 .profile .icon{
     height: 200px;
     width: 200px;
@@ -185,12 +298,12 @@ border-width: 0px 32px 55.43px 32px;
 
 /**/
 .black{
-    margin-top: 850px;
+    margin-top: 300px;
 }
 .black .box{
     width: 100%;
     height: 450px;
-    background-color: #303030;
+    background-color: #282828;
     background-image:  linear-gradient(#444444 1.4px, transparent 1.4px), linear-gradient(to right, #444444 1.4px, rgba(230, 230, 247, 0) 1.4px);
     background-size: 80px 80px;
     background-attachment: fixed;
@@ -213,62 +326,20 @@ border-width: 0px 32px 55.43px 32px;
 .work{
     margin-top: 100px;
 }
-.work #works{
-    position: relative;
-    top: -30px;
-}
 .work h1{
     text-align: center;
     color: #444444;
     border-bottom: #575757 solid;
     padding: 10px;
     margin: 0 40%;
+    font-size: 30px;
+    font-family: Makinas-4;
 }
 .work p{
     text-align: center;
     color: #444444;
     margin-bottom: 60px;
 }
-
-.work h2{
-    font-size: 25px;
-    color: #444444;
-    margin-left: 100px;
-}
-
-
-.swiper {
-    margin-top: 70px;
-    width: 100%;
-    height: 400px;
-  }
-  
-  .swiper-slide {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-  }
-  
-  .slide1 {
-    background-color: #a3cce0;
-  }
-  
-  .slide2 {
-    background-color: #a4da1c;
-  }
-  
-  .slide3 {
-    background-color: #cb4651;
-  }
-  
-  .slide4 {
-    background-color: #DEC20B;
-  }
-
-
 
 
 .work .content .Z{
@@ -277,20 +348,44 @@ border-width: 0px 32px 55.43px 32px;
     display: flex;
     flex-wrap: wrap;
 }
+.i-box{
+    overflow:hidden;
+    height: 450px;
+    margin: 0 10px;
+}
 .work .content img{
     width: 250px;
     height: 450px;
-    margin: 0 10px;
     object-fit: cover;
+    transition: transform .3s ease;
 }
+.work .content img:hover{
+    transform:scale(1.15,1.15);
+    opacity: 0.7;
+}
+
 .work .content .Zr{
-    width: 250px;
-    height: 450px;
-    margin: 0 10px;
-    object-fit: cover;
     object-position: 85%;
 }
 
+
+.botton{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+.botton a{
+    text-decoration: none;
+    border: 1px solid #833737;
+    color: #833737;
+    padding: .7em 2em;
+    font-size: 15px;
+    transition: .3s;
+}
+.botton a:hover{
+    background-color: #833737;
+    color: white;
+}
 
 /*footer*/
 footer{

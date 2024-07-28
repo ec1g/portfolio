@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+  <title>portfolio-allworks</title>
+  <link rel="stylesheet" href="s-detail.css">
+  <style>
+    .fade-in-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+    <main>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#profile">Profile</a></li>
+                    <li><a href="i-all.html">Works</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="w1 fade-in-up">
+            <section class="content">
+                <h1>All Works</h1>
+                <div class="Z">
+                    <div>
+                        <a href="i-detail1.html"><div class="i-box"><img src="tt.png" loading="lazy"></div></a>
+                        <p>自分のロゴ、名刺</p>
+                    </div>
+                    <div>
+                        <a href="i-detail2.html"><div class="i-box"><img src="m1.png" loading="lazy"></div></a>
+                        <p>課題で制作した映像</p>
+                    </div>
+                    <div>
+                        <a href="i-detail3.html"><div class="i-box"><img class="Zr" src="n1.png" loading="lazy"></div></a>
+                        <p>自主制作映像</p>
+                    </div>
+                    <div>
+                        <a href="i-detail4.html"><div class="i-box"><img src="e1.JPG" loading="lazy"></div></a>
+                        <p>イラスト</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <footer>
+            <div>
+                <a href="#"><img class="f1" src="mail.png" loading="lazy"></a>
+                <a href="#"><img class="f2" src="github.webp" loading="lazy"></a>
+            </div>
+            <p>@portfolio</p>
+        </footer>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.fade-in-up');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+
+            elements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

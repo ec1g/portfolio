@@ -4,6 +4,17 @@ body{
     background-color: rgb(192, 192, 192);
 }
 
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 header{
     position: fixed;
     display: flex;
@@ -23,14 +34,7 @@ header{
     }
 }
 
-header h1{
-    color: rgb(255, 255, 255);
-    margin: 10px 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-shadow: 1px 1px #44444484;
-}
+
 header nav{
     display: flex;
     justify-content: center;
@@ -54,22 +58,25 @@ header ul li a{
     padding: 8px;
 }
 header ul li a:hover{
-    background-color: #f3f3f383;
-    transition: background-color 0.3s;
+    color: #833737;
+    transition: color 0.4s;
 }
 
 
 .w1{
-    padding-top: 130px;
+    padding-top: 100px;
     color: #4d4d4d;
 }
-.detail1{
+.detail{
     width: 100%;
+    height: 480px;
+    object-position: 80% 20%;
+    object-fit: cover;
     margin-bottom: 30px;
 }
 video{
     width: 100%;
-    height: 400px;
+    height: 480px;
     object-fit: cover;
     margin-bottom: 30px;
 }
@@ -79,7 +86,10 @@ video{
 }
 .w1 .cyap h1{
     margin-bottom: 50px;
+    font-family: Makinas-4;
+    font-size: 30px;
 }
+
 .w1 table{
     width: 100%;
 }
@@ -87,13 +97,68 @@ video{
     width: 30px; 
 }
 
+.stmi{
+    margin-top: 100px;
+    margin-left: 15%;
+    font-size: 20px;
+}
+.w-img{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.w-img img{
+    width: 500px;
+    margin: 10px;
+    object-fit: cover;
+}
 
 
+
+.content h1{
+    text-align: center;
+    font-size: 40px;
+    font-family: Makinas-4;
+}
+@font-face {
+    font-family: Makinas-4;
+    src: url(makinas4/Makinas-4-Flat.otf);
+  }
+.content .Z{
+    margin: 0 100px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+.i-box{
+    overflow:hidden;
+    height: 450px;
+    margin: 0 10px;
+}
+.content img{
+    width: 250px;
+    height: 450px;
+    object-fit: cover;
+    transition: transform .3s ease;
+}
+.content img:hover{
+    transform:scale(1.15,1.15);
+    opacity: 0.7;
+}
+
+.content .Zr{
+    object-position: 85%;
+}
+.content p{
+    text-align: center;
+    color: #444444;
+    margin-bottom: 60px;
+}
 
 
 /*footer*/
 footer{
-    margin-top: 200px;
+    margin-top: 170px;
     height: 130px;
     width: 100%;
     background-color: rgba(147, 147, 147, 0.672);
