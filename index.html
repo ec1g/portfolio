@@ -4,32 +4,157 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+  />
     <title>portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
-        <p>portfolioの内容</p>
-
+        <header>
+            <h1>Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#works">Works</a></li>
+                </ul>
+            </nav>
+        </header>
         <section class="hero">
+            <div></div>
+
+        <section class="target">
+            <a href="#"><div class="triangle"></div></a>
+        </section>
         </section>
 
+    <div class="M">
         <section class="profile">
-            <src img="">
-                <p>名前</p>
-                <p>大学生 2年</p>
-                <p>2005年生まれ</p>
+            <div class="P" id="profile"></div>
+            <div class="icon"></div>
+            <div class="p1">
+                <h2>Profile</h2>
+                <div class="ppp">
+                    <p>名前:えちご ひろこ</p>
+                    <p>年齢:大学生 2年</p>
+                </div>
+                <div class="ppp2">
+                    <br>
+                    <p>2005年生まれ</p>
+                    <p>2023/3 岐阜北高校 卒業</p>
+                    <p>2023/4 愛知工業大学 入学</p>
+                </div>
+            </div>
+            <div class="p2">
+                <a href="#"><img class="i1" src="mail.png"></a>
+                <a href="#"><img class="i2" src="github.webp"></a>
+            </div>
         </section>
+    </div>
         
+    <section class="black">
+        <div class="box">
+            <p>
+            情報量が多いのにまとまって見えるデザインが好きかも
+            <br>
+            デザインを少しでも噛んだ仕事に就くことが目標
+            <br><br>skill<br>
+            blender/
+            </p>
+        </div>
+    </section>
         <section class="work">
-        </section>
+            <div id="works"></div>
+                <h1>Works</h1>
+                <p>自主制作</p>
 
-        <section class="contact">
+<!-- slider全体を包む要素
+<div class="swiper">
+各スライド全体を包む要素 -->
+<!-- <div class="swiper-wrapper"> -->
+<!-- 各スライドの要素 -->
+<!-- <div class="swiper-slide slide1"><img src=""></div>
+<div class="swiper-slide slide2">slide2</div>
+<div class="swiper-slide slide3">slide3</div>
+<div class="swiper-slide slide4">slide4</div>
+</div> -->
+<!-- ナビゲーションボタン -->
+<!-- <div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+</div> -->
+
+            <section class="content">
+                
+                <div class="Z">
+                    <div>
+                        <a href="i-detail.html"><img src="tt.png"></a>
+                        <p>自分のアイコン、名刺</p>
+                    </div>
+
+                    <div>
+                        <a href="i-detail2.html"><img src="m1.png"></a>
+                        <p>課題で作った映像</p>
+                    </div>
+
+                    <div>
+                        <img class="Zr" src="n1.png">
+                        <p>自主制作映像</p>
+                    </div>
+
+                    <div>
+                        <img src="e1.JPG">
+                        <p>趣味のイラスト</p>
+                    </div>
+                </div>
+            </section>
+            
+
+        
         </section>
         
+
         <footer>
+            <div>
+                <a href="#"><img class="f1" src="mail.png"></a>
+                <a href="#"><img class="f2" src="github.webp"></a>
+            </div>
+            <p>@portfolio</p>
         </footer>
 
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+
+const swiper = new Swiper(".swiper", {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    pagination: {
+      el: ".swiper-pagination", //必須の設定：ページネーションのclass指定
+      type: "bullets",
+      clickable: "clickable"
+    },
+  
+     // 自動再生
+  autoplay: {
+      delay: 4000, // 4秒ごとにスライド切り替え
+   },
+   
+   slidesPerView: 1.5, //表示させるスライド枚数を指定
+  centeredSlides: true, //1枚目のスライドを真ん中に配置させる
+  spaceBetween: 10, //スライド間のスペースを設定
+  loop: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  }
+  });
+        
+  
+</script>
 </body>
 </html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>portfolio-works1</title>
+    <link rel="stylesheet" href="s-detail.css">
+
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#profile">Profile</a></li>
+                    <li><a href="index.html#works">Works</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="w1">
+            <video class="detail12" src="mov1.mp4" loop autoplay muted playsinline preload poster="thumbnail.jpg"></video>
+           
+            <div class="cyap">
+                <h1>文字PV</h1>
+            <p>授業課題で映像制作をしました。<br></p>
+            <table>
+            <tbody>
+                <tr>
+                    <td>製作時期:</td>
+                    <td><p>2023/5</p></td>
+                </tr>
+                <tr>
+                    <td>使用アプリ:</td>
+                    <td><p>Aviutl</p></td>
+                </tr>
+            </tbody>
+            </table>
+
+            <div>
+            <img src="m1.png">
+            <img src="m2.png">
+            <img src="m3.png">
+            <img src="m4.png">
+            </div>
+            
+            </div>
+
+        </section>
+
+
+        <footer>
+            <div>
+                <a href="#"><img class="f1" src="mail.png"></a>
+                <a href="#"><img class="f2" src="github.webp"></a>
+            </div>
+            <p>@portfolio</p>
+        </footer>
+    </main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const video = document.querySelector(".detail12");
+
+    video.addEventListener("mouseenter", function() {
+        video.play();
+    });
+
+    video.addEventListener("mouseleave", function() {
+        video.pause();
+        video.currentTime = 0;  // 動画を最初に戻す場合
+    });
+});
+    </script>
+</body>
+</html>

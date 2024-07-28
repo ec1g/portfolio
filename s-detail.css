@@ -1,0 +1,118 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(192, 192, 192);
+}
+
+header{
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 130px;
+    z-index: 100;
+    flex-direction: column;
+}
+@media(min-width: 601px){
+    header{
+        display: flex;
+        flex-direction: row;
+        height: 100px;
+    }
+    header nav{
+        margin: 0 0 0 auto;
+    }
+}
+
+header h1{
+    color: rgb(255, 255, 255);
+    margin: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px #44444484;
+}
+header nav{
+    display: flex;
+    justify-content: center;
+}
+header ul{
+    display: flex;
+    margin: 10px 10px;
+    padding: 0;
+}
+header ul li{
+    margin: 0 15px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 8px;
+}
+header ul li a:hover{
+    background-color: #f3f3f383;
+    transition: background-color 0.3s;
+}
+
+
+.w1{
+    padding-top: 130px;
+    color: #4d4d4d;
+}
+.detail1{
+    width: 100%;
+    margin-bottom: 30px;
+}
+video{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 30px;
+}
+
+.w1 .cyap{
+    margin: 30px 15%;
+}
+.w1 .cyap h1{
+    margin-bottom: 50px;
+}
+.w1 table{
+    width: 100%;
+}
+.w1  td{
+    width: 30px; 
+}
+
+
+
+
+
+/*footer*/
+footer{
+    margin-top: 200px;
+    height: 130px;
+    width: 100%;
+    background-color: rgba(147, 147, 147, 0.672);
+    text-align: center;
+}
+footer p{
+    margin: 0;
+    color: #444444;
+}
+footer div{
+    padding-top: 60px;
+}
+footer .f1{
+    width: 36px;
+    height: 36px;
+    margin: 0 10px;
+}
+footer .f2{
+    width: 27px;
+    height: 27px;
+    margin: 0  10px 6px 10px;
+}
