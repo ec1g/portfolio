@@ -149,19 +149,42 @@ video{
 .content .Zr{
     object-position: 85%;
 }
+.content p span{
+    color: #833737;
+}
 .content p{
     text-align: center;
     color: #444444;
     margin-bottom: 60px;
 }
 
+.target{
+    margin: 130px 0 0 20px;
+    display: flex;
+}
+.target a{
+    text-decoration: none;
+}
+.target p span{
+    color: #833737;
+    font-size: 25px;
+    padding-right: 10px;
+}
+.target p{
+    padding-left: 10px;
+    color: #282828;
+}
+.target p:visited{
+    color: #282828;
+}
+
 
 /*footer*/
 footer{
-    margin-top: 170px;
+    margin-top: 10px;
     height: 130px;
     width: 100%;
-    background-color: rgba(147, 147, 147, 0.672);
+    border-top: #282828 solid 1px;
     text-align: center;
 }
 footer p{

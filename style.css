@@ -124,10 +124,15 @@ header ul li a:hover{
 }
 .text-h h1{
     font-family: Makinas-4;
+    font-style: italic;
     font-size: 3rem;
     animation: slideIn-m 2s ease-out;
     color: white;
 }
+@font-face {
+    font-family: Makinas-4;
+    src: url(makinas4/Makinas-4-Flat.otf);
+  }
 
 
 
@@ -230,10 +235,6 @@ header ul li a:hover{
     border-bottom: #808080 solid;
     font-family: Makinas-4;
 }
-@font-face {
-    font-family: Makinas-4;
-    src: url(makinas4/Makinas-4-Flat.otf);
-  }
 .profile .icon{
     height: 200px;
     width: 200px;
@@ -298,7 +299,7 @@ header ul li a:hover{
 
 /**/
 .black{
-    margin-top: 300px;
+    margin-top: 350px;
 }
 .black .box{
     width: 100%;
@@ -367,6 +368,10 @@ header ul li a:hover{
 .work .content .Zr{
     object-position: 85%;
 }
+.content p span{
+    color: #833737;
+}
+
 
 
 .botton{
@@ -387,12 +392,14 @@ header ul li a:hover{
     color: white;
 }
 
+
+
 /*footer*/
 footer{
     margin-top: 200px;
     height: 130px;
     width: 100%;
-    background-color: rgba(147, 147, 147, 0.672);
+    border-top: #282828 solid 1px;
     text-align: center;
 }
 footer p{
