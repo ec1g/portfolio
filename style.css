@@ -96,6 +96,11 @@ header ul li a:hover{
     animation: slideIn 2s forwards;
     z-index: 999;
 }
+@media(max-width: 600px){
+    .slider {
+        height: 5037px;
+    }
+}
 
 @keyframes slideIn {
     0% {
