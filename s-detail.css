@@ -172,10 +172,13 @@ video{
 }
 .target p{
     padding-left: 10px;
-    color: #282828;
+    color: #ffffff;
 }
 .target p:visited{
-    color: #282828;
+    color: white;
+}
+.target p:hover{
+    color: #833737;
 }
 
 
